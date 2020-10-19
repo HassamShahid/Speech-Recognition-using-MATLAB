@@ -1,6 +1,6 @@
 function Voice_Rec(~)
 Fs = 70000;         			% Sample Frequency 
-x=audioread('test.wav');
+x=audioread('test147.wav');
 %
 % tag wave information 
 %
@@ -12,7 +12,7 @@ y1=audioread('hassam171.wav');
 y2=audioread('moiz147.wav');
 y3=audioread('hamza157.wav');
 y4=audioread('hassan165.wav');
-y5=audioread('funny.wav');
+y5=audioread('miss.wav');
 
 h=audioread('allow.wav');
 
@@ -53,10 +53,10 @@ if (delta4 <= dif)
     dif = abs(delta4);
 end 
  
-funny= cov(y5);
-delta5 = abs(funny- voice);
+miss= cov(y5);
+delta5 = abs(miss- voice);
 if (delta5 <= dif) 
-    sel = funny;
+    sel = miss;
     dif = abs(delta5);
 end
  
@@ -73,7 +73,7 @@ elseif sel == hamza157
 elseif sel == hassan165
     soundsc(y4,Fs)
         soundsc(h,Fs)
-elseif sel == funny
+elseif sel == miss
     soundsc(y5,Fs)
         soundsc(h,Fs)
 else soundsc(audioread('denied.wav'),Fs)
