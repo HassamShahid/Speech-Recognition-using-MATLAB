@@ -1,15 +1,15 @@
 function Voice_Rec(~)
-Fs = 70000;         			% Sample Frequency 
-x=audioread('test147.wav');
+Fs = 45000;         			% Sample Frequency 
+x=audioread('testmov.wav');
 %
 % tag wave information 
 %
 voice=cov(x);
 %
 
-y0=audioread('denied.wav'); 	%'denied.wav' was used here as reference
+y0=audioread('test157.wav'); 	%'denied.wav' was used here as reference
 y1=audioread('hassam171.wav');
-y2=audioread('moiz147.wav');
+y2=audioread('test147.wav');
 y3=audioread('hamza157.wav');
 y4=audioread('hassan165.wav');
 y5=audioread('miss.wav');
@@ -23,7 +23,7 @@ sel = ref;
 dif = abs(delta0);
  
 % all allowed wave files must be loaded and compared 
-% to the input, hassam171 at a time
+% to the input, one at a time
 %
 hassam171=cov(y1);
 delta1 = abs(hassam171 - voice);
